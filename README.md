@@ -69,6 +69,17 @@ Here are two examples of how to specify the namespace in your project.
 ##### BaseController.js
 ![](gifs/namespace-baseController.gif)
 
+#### Specifying the OData-Service
+If you already have an OData-Service, which you can consume in your app,
+then you have to enter the path to the service in the _manifest.json_
+and _manifest_local.json_(If the service is hosted on a SAP GW) like so:
+
+##### manifest.json (without proxy)
+![](gifs/odata-noproxy.gif)
+
+##### manifest_local.json (without proxy)
+![](gifs/odata-proxy.gif)
+
 
 
 
