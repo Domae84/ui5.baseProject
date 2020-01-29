@@ -49,7 +49,8 @@ app. There are a lot of places where you have to specify this namespace
 e.g. the index.html, the manifest.json or in all the modules and
 controllers like the Component.js or the BaseController.js. Here is a
 list where you have to edit the namespace, so that the project works
-fine:
+fine (search for the string _namespace_ to know where to exactly change
+it):
 * controller/App.controller.js
 * controller/BaseController.js
 * model/ModelsHelper.js
