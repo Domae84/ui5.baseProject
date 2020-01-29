@@ -63,6 +63,11 @@ fine:
 
 Here are two examples of how to specify the namespace in your project.
 
+##### index.html
+![](gifs/namespace-index.gif)
+
+##### BaseController.js
+![](gifs/namespace-baseController.gif)
 
 
 
