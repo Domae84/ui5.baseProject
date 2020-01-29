@@ -11,7 +11,7 @@
 			src="/resources/sap-ui-core.js"
 			data-sap-ui-theme="sap_belize_plus"
 			data-sap-ui-resourceroots='{
-				"ui5.baseProject": "./"
+				"namespace": "./"
 			}'
 			data-sap-ui-compatVersion="edge"
 			data-sap-ui-async="true"
@@ -25,7 +25,7 @@
 						appWidthLimited: false,
 						app: new ComponentContainer({
 							height: "100%",
-							name: "ui5.baseProject",
+							name: "namespace",
 							manifest: "manifest_local.json"
 						})
 					}).placeAt("content");

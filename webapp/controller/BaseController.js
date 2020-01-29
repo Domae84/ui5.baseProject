@@ -8,7 +8,7 @@ sap.ui.define(
 		"sap/ui/core/mvc/Controller",
 		"sap/ui/core/routing/History",
 		"sap/ui/core/Fragment",
-		"ui5/baseProject/util/Validator"
+		"namespace/util/Validator"
 	],
 	function(Controller, History, Fragment, Validator) {
 		"use strict";
@@ -222,7 +222,7 @@ sap.ui.define(
 
 		//************* Private Funktionen *****************
 
-		return Controller.extend("ui5.baseProject.controller.BaseController", {
+		return Controller.extend("namespace.controller.BaseController", {
 			onInit: onInit,
 			getRouter: getRouter,
 			getI18nBundle:getI18nBundle,
