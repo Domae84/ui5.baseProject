@@ -43,6 +43,27 @@ to load the *sap-ui-core.js* locally from your machine, you have to
 specify the path to where you extract the SAPUI5 runtime like so:
 ![](gifs/ui5yaml-servestatic.gif)
 
+#### Adding a Namespace to your Project
+When you are working with SAPUI5 you need to define a namespace for your
+app. There are a lot of places where you have to specify this namespace
+e.g. the index.html, the manifest.json or in all the modules and
+controllers like the Component.js or the BaseController.js. Here is a
+list where you have to edit the namespace, so that the project works
+fine:
+* controller/App.controller.js
+* controller/BaseController.js
+* model/ModelsHelper.js
+* services/BackendCommunicationService.js
+* util/Errorhandler.js
+* Component.js
+* index.html
+* local.html
+* manifest.json
+* manifest_local.json
+
+Here are two examples of how to specify the namespace in your project.
+
+
 
 
 
