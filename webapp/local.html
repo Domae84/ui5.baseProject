@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Produkt- und Preismanager</title>
+
+		<script
+			id="sap-ui-bootstrap"
+			src="/resources/sap-ui-core.js"
+			data-sap-ui-theme="sap_belize_plus"
+			data-sap-ui-resourceroots='{
+				"namespace": "./"
+			}'
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-async="true"
+			data-sap-ui-frameOptions="trusted"
+			data-sap-ui-preload="async"
+		></script>
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				sap.ui.require(["sap/m/Shell", "sap/ui/core/ComponentContainer"], function(Shell, ComponentContainer) {
+					new Shell({
+						appWidthLimited: false,
+						app: new ComponentContainer({
+							height: "100%",
+							name: "namespace",
+							manifest: "manifest_local.json"
+						})
+					}).placeAt("content");
+				});
+			});
+		</script>
+	</head>
+	<body class="sapUiBody" id="content"></body>
+</html>

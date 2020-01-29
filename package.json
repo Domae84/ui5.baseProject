@@ -1,0 +1,28 @@
+{
+  "name": "ppm",
+  "version": "1.0.0",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "start": "ui5 serve -o local.html",
+    "serve": "ui5 serve",
+    "build": "ui5 build --clean-dest",
+    "lint": "eslint webapp",
+    "deploy": "ui5 build && grunt deploy"
+  },
+  "devDependencies": {
+    "@ui5/cli": "latest",
+    "eslint": "latest",
+    "grunt": "latest",
+    "grunt-nwabap-ui5uploader": "latest",
+    "ui5-middleware-livereload": "latest",
+    "ui5-middleware-servestatic": "latest"
+  },
+  "ui5": {
+    "dependencies": [
+      "ui5-middleware-servestatic",
+      "ui5-middleware-livereload"
+    ]
+  }
+}
