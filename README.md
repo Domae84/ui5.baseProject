@@ -33,8 +33,17 @@ development. It comes with some features like:
 ### Post-Installation Steps
 
 #### UI5.yaml
+##### App ID 
 In your UI5.yaml you have to specify the app id like so:
 ![](gifs/ui5yaml-id.gif)
+
+##### Serve-Static Middleware (Optional)
+If you want to use the **_serve-static-middleware_**, which allows you
+to load the *sap-ui-core.js* locally from your machine, you have to
+specify the path to where you extract the SAPUI5 runtime like so:
+![](gifs/ui5yaml-servestatic.gif)
+
+
 
 
 
