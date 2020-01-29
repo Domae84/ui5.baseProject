@@ -34,7 +34,7 @@ development. It comes with some features like:
 
 #### UI5.yaml
 In your UI5.yaml you have to specify the app id like so:
-[](gifs/ui5yaml-id.gif)
+[](ui5yaml-id.gif)
 
 
 
