@@ -1,12 +1,11 @@
 specVersion: "1.0"
 metadata:
-  name: ppm
+  name: myId
 type: application
 builder:
   resources:
     excludes:
       - 'local.html'
-      - '/test'
       - 'manifest_local.json'
 server:
   customMiddleware:
