@@ -185,6 +185,7 @@ Run those commands in a terminal at the folder where the package.json is located
 ### Future Improvements
 * Creating a Yeoman Project, which will create the whole project
   structure, so that you don't have to edit the namespace anymore.
+* Adding the jsdoc template
 
 
 
