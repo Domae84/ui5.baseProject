@@ -102,6 +102,7 @@ So if you want to deploy you application to a SAP Gateway Server, all
 you have to do, is to edit the Gruntfile.js and specify the following
 properties:
 * Hostname of Gateway Server
+* Your GW-Username
 * Package, to which you want to add you app
 * The name of the BSP.
 * The description of the BSP.
@@ -117,11 +118,15 @@ certificate error. To solve this, you can set the property
 certificate yet :( Any help is much appreciated!! )
 
 If you you are done with the configuration you can start the bat-file
-**_ui5deploy.bat_**. It will ask you for your password your GW-User, so
-that you don't have to define it in plain text in the Gruntfile.js. (The
-_ui5Deploy.bat_ will save you password temporally and save it in a
+**_ui5deploy.bat_**. It will ask you for your password of your GW-User,
+so that you don't have to define it in plain text in the Gruntfile.js.
+After you entered you password the Grunt task deploy will be triggered
+which starts the actual deployment of the app. 
+
+(The _ui5Deploy.bat_ will save you password temporally and save it in a
 text-file, so that the script can reuse it for pass it to the Grunt
-deploy command. After that this text-file will automatically deleted! )
+deploy command. After that this text-file will automatically be deleted!
+)
 
 
 #### Consuming OData-Services locally in your app
@@ -129,17 +134,32 @@ Let's say you are developing an app which consumes an OData-Service from
 some corporate backend system and start your app via the index.html
 locally on your just installed ui5server, then you will probably get an
 Access-Control-Allow-Origin (CORS) error. To solve this, I added the
-**local.html** and the **manifest_local.json**. What you want to do is
-to start your app via the local.html, which will trigger the bootstrap
-of SAPUI5 and loads your component not with the usual _manifest.json_
-but instead with the local version _manifest_local.json_. They are
-almost the same but with the tiny difference, that the manifest_local
-has different OData-Service settings, which I described in the
-*Post-Installation Steps*. 
+**local.html** and the **manifest_local.json**. 
+
+What you want to do is to start your app via the local.html, which will
+trigger the bootstrap of SAPUI5 and loads your component not with the
+usual _manifest.json_ but instead with the local version
+_manifest_local.json_. They are almost the same but with the tiny
+difference, that the manifest_local has different OData-Service
+settings, which I described in the *Post-Installation Steps*.
 
 And don't worry, these two files are not part of the build process, so
 that your app will run as usual with the index.html or as part of the
 SAP Fiori Launchpad, which will use the default *manifest.json*.
+
+### Usefull Commands
+Run those commands in a terminal at the folder where the package.json is located!
+
+* Run the ui5 server
+  * `npm run start` -> This will start the ui5 server and opens the
+    local.html in your browser
+  * `ui5 serve` -> This will just start the ui5 server
+* Start the ui5 build process (Component-preload.js and *-dbg.js files
+  * `npm run build` or `ui5 build`
+* Deploy your application to SAP Gateway
+  * `ui5Deploy` 
+  * `grunt deploy --pwd=<your GW-User password>`
+  
 
 
 ### Usefull Links
