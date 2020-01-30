@@ -125,6 +125,8 @@ so that you don't have to define it in plain text in the Gruntfile.js.
 After you entered you password the Grunt task deploy will be triggered
 which starts the actual deployment of the app. 
 
+![](gifs/deployment.gif)
+
 (The _ui5Deploy.bat_ will save you password temporally and save it in a
 text-file, so that the script can reuse it for pass it to the Grunt
 deploy command. After that this text-file will automatically be deleted!
