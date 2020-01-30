@@ -1,6 +1,6 @@
 specVersion: "1.0"
 metadata:
-  name: myId
+  name: namespace
 type: application
 builder:
   resources:
@@ -19,4 +19,4 @@ server:
       afterMiddleware: compression
       mountPath: /resources
       configuration:
-        rootPath: "C:/Users/Domae84/Desktop/sapui5-rt-1.73.0/resources/"
+        rootPath: "path/to/ui5/resources/folder"

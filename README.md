@@ -8,11 +8,16 @@ development. It comes with some features like:
 * A predefined OData-Model and JSON-Model
 * Some predefined i18n texts
 * An Error-Handler-Module to intercept all OData-Errors
-* A Validator-Module for checking forms
+* A Validator-Module for checking forms (Thx to Robin Van Het Hof
+  [Github](https://github.com/qualiture/ui5-validator))
 * Grunt configuration for deploying your app to a SAP Gateway Server
 * Eslint configuration
 * JsDoc configuration with a nice template
 * A lot more..
+
+### System Settings
+* OS: **Windows 10**
+* Browser: **Google Chrome**
 
 ### Prerequisites
 
@@ -33,9 +38,9 @@ development. It comes with some features like:
 ### Post-Installation Steps
 
 #### UI5.yaml
-##### App ID 
-In your UI5.yaml you have to specify the app id like so:
-![](gifs/ui5yaml-id.gif)
+##### Namespace 
+In your UI5.yaml you have to specify the namespace of your app under
+*name* like so: ![](gifs/ui5yaml-id.gif)
 
 ##### Serve-Static Middleware (Optional)
 If you want to use the **_serve-static-middleware_**, which allows you
@@ -81,7 +86,71 @@ and _manifest_local.json_(If your are behind a corporate proxy) like so:
 ##### manifest_local.json (with proxy)
 ![](gifs/odata-proxy.gif)
 
+#### Live-Reload Functionality
+If you want to use the live-reload functionality, which refreshes your
+browser, after you edited your coding, you have to install a [Chrome
+extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei).
+So when you start the server and open the application, the browser
+automatically connects to the live-reload-middleware. A successful
+connection is indicated with a black filled circle in the extension
+icon.
 
+### How-To
+
+#### Deploying the application to SAP Netweaver Gateway Server
+So if you want to deploy you application to a SAP Gateway Server, all
+you have to do, is to edit the Gruntfile.js and specify the following
+properties:
+* Hostname of Gateway Server
+* Package, to which you want to add you app
+* The name of the BSP.
+* The description of the BSP.
+* The number of the transport request.
+
+In addition you can define if you want to trigger the report
+**_/UI5/APP_INDEX_CALCULATE_** after the deployment has finished, which,
+in my opinion, is very useful.
+
+If you are working behind a corporate proxy, you will probably get an
+certificate error. To solve this, you can set the property
+*useStrictSSL* to `false`. ( I didn't find a way to reference the proxy
+certificate yet :( Any help is much appreciated!! )
+
+If you you are done with the configuration you can start the bat-file
+**_ui5deploy.bat_**. It will ask you for your password your GW-User, so
+that you don't have to define it in plain text in the Gruntfile.js. (The
+_ui5Deploy.bat_ will save you password temporally and save it in a
+text-file, so that the script can reuse it for pass it to the Grunt
+deploy command. After that this text-file will automatically deleted! )
+
+
+#### Consuming OData-Services locally in your app
+Let's say you are developing an app which consumes an OData-Service from
+some corporate backend system and start your app via the index.html
+locally on your just installed ui5server, then you will probably get an
+Access-Control-Allow-Origin (CORS) error. To solve this, I added the
+**local.html** and the **manifest_local.json**. What you want to do is
+to start your app via the local.html, which will trigger the bootstrap
+of SAPUI5 and loads your component not with the usual _manifest.json_
+but instead with the local version _manifest_local.json_. They are
+almost the same but with the tiny difference, that the manifest_local
+has different OData-Service settings, which I described in the
+*Post-Installation Steps*. 
+
+And don't worry, these two files are not part of the build process, so
+that your app will run as usual with the index.html or as part of the
+SAP Fiori Launchpad, which will use the default *manifest.json*.
+
+
+### Usefull Links
+* [How to use the ui5 command line interface @ui5/cli](https://sap.github.io/ui5-tooling/)
+* [Configure the ui5-middleware-servestatic module](https://www.npmjs.com/package/ui5-middleware-servestatic)
+* [Configure the ui5-middleware-livereload module](https://www.npmjs.com/package/ui5-middleware-livereload)
+* [Configure the grunt-nwabap-ui5uploader module](https://www.npmjs.com/package/grunt-nwabap-ui5uploader)
+
+### Future Improvements
+* Creating a Yeoman Project, which will create the whole project
+  structure, so that you don't have to edit the namespace anymore.
 
 
 
