@@ -165,6 +165,16 @@ Run those commands in a terminal at the folder where the package.json is located
   * `grunt deploy --pwd=<your GW-User password>`
   
 
+### FAQ
+* When I start the app, after completing the installation, I get an
+  OData-Service error! What has happened?
+  * If you start the app without having specified a path to an
+    OData-Service, you will get this error. This is the default
+    behaviour. If you just want to code, without an OData-Service, then
+    you have to delete the following properties in manifest.json and
+    manifest_local.json
+    * sap.app.dataSources.mainservice
+    * sapui5.models.""
 
 ### Usefull Links
 * [How to use the ui5 command line interface @ui5/cli](https://sap.github.io/ui5-tooling/)
