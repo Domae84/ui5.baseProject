@@ -161,7 +161,7 @@ Run those commands in a terminal at the folder where the package.json is located
 * Start the ui5 build process (Component-preload.js and *-dbg.js files)
   * `npm run build` or `ui5 build`
 * Deploy your application to SAP Gateway
-  * `ui5Deploy` 
+  * `ui5Deploy.bat` 
   * `grunt deploy --pwd=<your GW-User password>`
   
 
