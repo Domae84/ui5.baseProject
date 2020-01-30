@@ -76,7 +76,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "isu.metaprodukte.ppm.i18n.i18n"
+					"bundleName": "namespace.i18n.i18n"
 				}
 			},
 			"util": {
