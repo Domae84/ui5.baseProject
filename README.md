@@ -36,7 +36,6 @@ development. It comes with some features like:
    (scroll down on that side) and extract it somewhere
 
 ### Post-Installation Steps
-Delete the *gifs*-folder!!
 
 #### UI5.yaml
 ##### Namespace 
@@ -95,6 +94,8 @@ So when you start the server and open the application, the browser
 automatically connects to the live-reload-middleware. A successful
 connection is indicated with a black filled circle in the extension
 icon.
+
+#### Delete the *gifs*-folder!! You don't need it :)
 
 ### How-To
 
