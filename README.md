@@ -36,6 +36,7 @@ development. It comes with some features like:
    (scroll down on that side) and extract it somewhere
 
 ### Post-Installation Steps
+Delete the *gifs*-folder!!
 
 #### UI5.yaml
 ##### Namespace 
